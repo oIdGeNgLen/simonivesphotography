@@ -22,7 +22,11 @@ body {
 /* iOS safe area handling */
 @supports (padding: max(0px)) {
   .safe-bottom {
-    padding-bottom: max(1rem, env(safe-area-inset-bottom));
+    padding-bottom: max(2rem, env(safe-area-inset-bottom, 2rem));
+  }
+  
+  .pb-safe {
+    padding-bottom: max(0.5rem, env(safe-area-inset-bottom, 0.5rem));
   }
 }
 
