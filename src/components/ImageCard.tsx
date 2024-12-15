@@ -37,10 +37,10 @@ export default function ImageCard({
   return (
     <section 
       ref={targetRef as React.RefObject<HTMLElement>}
-      className="h-screen min-h-[calc(100vh-64px)] w-full flex items-center justify-center p-4 pt-16 sm:pt-20 snap-start"
+      className="h-screen w-full snap-start flex flex-col items-center justify-center px-4 pt-20"
     >
-      <div className="max-w-3xl w-full flex flex-col items-center">
-        <picture className="mb-4 sm:mb-6 relative">
+      <div className="max-w-4xl w-full space-y-4">
+        <picture className="relative h-[50vh] md:h-[65vh] w-full flex items-center justify-center">
           <source media="(min-width: 640px)" srcSet={imageurl} />
           <img
             src={url}
@@ -51,7 +51,7 @@ export default function ImageCard({
             onLoad={() => setIsLoaded(true)}
           />
         </picture>
-        <div className="text-center space-y-1.5 sm:space-y-2">
+        <div className="text-space-y-2 text-center">
           <h2 className="text-xl sm:text-2xl font-light">{title}</h2>
           <p className="text-xs sm:text-sm text-gray-600">{location} © Simon Ives</p>
           <div className="flex justify-center gap-3 sm:gap-4">
