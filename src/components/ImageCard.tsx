@@ -37,24 +37,27 @@ export default function ImageCard({
   return (
     <section 
       ref={targetRef as React.RefObject<HTMLElement>}
-      className="h-screen min-h-[calc(100vh-64px)] w-full flex items-center justify-center p-4 pt-16 sm:pt-20 snap-start"
+      className="h-screen w-full flex flex-col justify-center snap-start px-4 pt-20 pb-4 safe-bottom"
     >
-      <div className="max-w-3xl w-full flex flex-col items-center">
-        <picture className="mb-6 relative">
-          <source media="(min-width: 640px)" srcSet={imageurl} />
-          <img
-            src={url}
-            alt={title}
-            className={`max-w-full border border-black/30 object-contain max-h-[calc(70vh-64px)] transition-opacity duration-300 ${
-              isLoaded ? 'opacity-100' : 'opacity-0'
-            }`}
-            onLoad={() => setIsLoaded(true)}
-          />
-        </picture>
-        <div className="text-center space-y-2">
+      <div className="w-full max-w-3xl mx-auto flex flex-col h-full">
+        <div className="flex-1 flex items-center justify-center min-h-0">
+          <picture className="w-full h-full flex items-center justify-center">
+            <source media="(min-width: 640px)" srcSet={imageurl} />
+            <img
+              src={url}
+              alt={title}
+              className={`max-w-full max-h-full border border-black/30 object-contain transition-opacity duration-300 ${
+                isLoaded ? 'opacity-100' : 'opacity-0'
+              }`}
+              onLoad={() => setIsLoaded(true)}
+            />
+          </picture>
+        </div>
+        
+        <div className="mt-4 text-center space-y-2 flex-shrink-0">
           <h2 className="text-2xl font-light">{title}</h2>
           <p className="text-sm text-gray-600">{location} © Simon Ives</p>
-          <div className="flex justify-center gap-4">
+          <div className="flex justify-center gap-4 pb-2">
             <a
               href={facebookurl}
               target="_blank"
