@@ -27,7 +27,7 @@ export default function Gallery() {
   }
 
   return (
-    <main className="h-[calc(100vh-64px)] mt-16 overflow-y-auto snap-y snap-mandatory">
+    <main className="snap-y snap-mandatory h-screen overflow-y-auto">
       {images.map((image, index) => (
         <ImageCard
           key={image.id}

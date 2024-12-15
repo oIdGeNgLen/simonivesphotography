@@ -37,7 +37,7 @@ export default function ImageCard({
   return (
     <section 
       ref={targetRef as React.RefObject<HTMLElement>}
-      className="h-screen w-full snap-start flex flex-col items-center justify-center px-4 pt-20"
+      className="h-screen w-full snap-start flex flex-col items-center justify-center px-4 pt-10"
     >
       <div className="max-w-4xl w-full space-y-4">
         <picture className="relative h-[50vh] md:h-[65vh] w-full flex items-center justify-center">
@@ -52,14 +52,14 @@ export default function ImageCard({
           />
         </picture>
         <div className="text-space-y-2 text-center">
-          <h2 className="text-xl sm:text-2xl font-light">{title}</h2>
-          <p className="text-xs sm:text-sm text-gray-600">{location} © Simon Ives</p>
+          <h2 className="text-xl sm:text-2xl pb-2 font-light">{title}</h2>
+          <p className="text-xs sm:text-sm pb-2 text-gray-600">{location} © Simon Ives</p>
           <div className="flex justify-center gap-3 sm:gap-4">
             <a
               href={facebookurl}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-1.5 sm:gap-2 text-xs sm:text-sm hover:text-gray-600 transition-colors"
+              className="flex items-center gap-1.5 sm:gap-2 text-sm hover:text-gray-600 transition-colors"
               title="View on Facebook"
             >
               <span className="sr-only">View on Facebook</span>
@@ -70,7 +70,7 @@ export default function ImageCard({
               href={instagramurl}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-1.5 sm:gap-2 text-xs sm:text-sm hover:text-gray-600 transition-colors"
+              className="flex items-center gap-1.5 sm:gap-2 text-sm hover:text-gray-600 transition-colors"
               title="View on Instagram"
             >
               <span className="sr-only">View on Instagram</span>
