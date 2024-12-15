@@ -37,48 +37,45 @@ export default function ImageCard({
   return (
     <section 
       ref={targetRef as React.RefObject<HTMLElement>}
-      className="h-screen w-full snap-start px-4 safe-bottom flex flex-col"
+      className="h-screen min-h-[calc(100vh-64px)] w-full flex items-center justify-center p-4 pt-16 sm:pt-20 snap-start"
     >
-      <div className="w-full max-w-3xl mx-auto flex-1 flex flex-col py-20">
-        <div className="flex-1 flex items-center justify-center max-h-[65vh]">
-          <picture className="w-full h-full flex items-center justify-center">
-            <source media="(min-width: 640px)" srcSet={imageurl} />
-            <img
-              src={url}
-              alt={title}
-              className={`max-w-full max-h-full border border-black/30 object-contain transition-opacity duration-300 ${
-                isLoaded ? 'opacity-100' : 'opacity-0'
-              }`}
-              onLoad={() => setIsLoaded(true)}
-            />
-          </picture>
-        </div>
-        
-        <div className="mt-4 text-center space-y-2">
-          <h2 className="text-2xl font-light">{title}</h2>
-          <p className="text-sm text-gray-600">{location} © Simon Ives</p>
-          <div className="flex justify-center gap-4 pb-safe">
+      <div className="max-w-3xl w-full flex flex-col items-center">
+        <picture className="mb-4 sm:mb-6 relative">
+          <source media="(min-width: 640px)" srcSet={imageurl} />
+          <img
+            src={url}
+            alt={title}
+            className={`max-w-full border border-black/30 object-contain max-h-[calc(60vh-64px)] sm:max-h-[calc(70vh-64px)] transition-opacity duration-300 ${
+              isLoaded ? 'opacity-100' : 'opacity-0'
+            }`}
+            onLoad={() => setIsLoaded(true)}
+          />
+        </picture>
+        <div className="text-center space-y-1.5 sm:space-y-2">
+          <h2 className="text-xl sm:text-2xl font-light">{title}</h2>
+          <p className="text-xs sm:text-sm text-gray-600">{location} © Simon Ives</p>
+          <div className="flex justify-center gap-3 sm:gap-4">
             <a
               href={facebookurl}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 text-sm hover:text-gray-600 transition-colors"
+              className="flex items-center gap-1.5 sm:gap-2 text-xs sm:text-sm hover:text-gray-600 transition-colors"
               title="View on Facebook"
             >
               <span className="sr-only">View on Facebook</span>
-              <span className="text-sm">View on</span>
-              <Facebook size={16} />
+              <span>View on</span>
+              <Facebook size={14} className="sm:w-4 sm:h-4" />
             </a>
             <a
               href={instagramurl}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 text-sm hover:text-gray-600 transition-colors"
+              className="flex items-center gap-1.5 sm:gap-2 text-xs sm:text-sm hover:text-gray-600 transition-colors"
               title="View on Instagram"
             >
               <span className="sr-only">View on Instagram</span>
-              <span className="text-sm">View on</span>
-              <Instagram size={16} />
+              <span>View on</span>
+              <Instagram size={14} className="sm:w-4 sm:h-4" />
             </a>
           </div>
         </div>
