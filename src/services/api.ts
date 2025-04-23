@@ -3,7 +3,9 @@ import type { Image } from '../types';
 
 const API_URL = 'https://api.nocodebackend.com';
 const API_KEY = 'a98d0c3246c8a7764f03248dd7d4711703417c34b80e316f2b2280654eb0';
-const INSTANCE = '42235_simon_ives_photographer&page=1&limit=10000';
+const INSTANCE = '42235_simon_ives_photographer';
+const PAGE = '1';
+const LIMIT = '999';
 
 const api = axios.create({
   baseURL: API_URL,
@@ -18,6 +20,8 @@ export async function fetchImages(): Promise<Image[]> {
     const response = await api.get('/read/images', {
       params: {
         Instance: INSTANCE,
+        Page: PAGE,
+        Limit: LIMIT,
       },
     });
 
