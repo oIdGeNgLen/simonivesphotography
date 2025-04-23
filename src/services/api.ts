@@ -3,7 +3,7 @@ import type { Image } from '../types';
 
 const API_URL = 'https://api.nocodebackend.com';
 const API_KEY = 'a98d0c3246c8a7764f03248dd7d4711703417c34b80e316f2b2280654eb0';
-const INSTANCE = '42235_simon_ives_photographer';
+const INSTANCE = '42235_simon_ives_photographer&page=1&limit=10000';
 
 const api = axios.create({
   baseURL: API_URL,
