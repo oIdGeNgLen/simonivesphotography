@@ -20,8 +20,8 @@ export async function fetchImages(): Promise<Image[]> {
     const response = await api.get('/read/images', {
       params: {
         Instance: INSTANCE,
-        Page: PAGE,
-        Limit: LIMIT,
+        page: PAGE,
+        limit: LIMIT,
       },
     });
 
